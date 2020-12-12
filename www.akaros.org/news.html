@@ -1,0 +1,296 @@
+<html>
+  
+<!-- Mirrored from www.akaros.org/akaros-web/news.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Dec 2020 20:21:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Akaros Home Page</title>
+    <link href="akaros.css" rel="stylesheet" type="text/css">
+    <!-- Start of Google Analytics Code -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22440912-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End of Google Analytics Code -->
+  </head>
+  <body>
+  <center>
+<table bordercolor="#006633" border="8" width="800" cellpadding="4">
+<tbody>
+<tr align="CENTER">
+<td>
+  <table border="0" bgcolor="#ffffff" width="100%" cellpadding="6">
+  <tbody>
+  <tr>
+    <td>
+      <img src="akaros.png" width=350>
+    </td>
+    <td align="TOP">
+      <p>
+Akaros&reg; is an open source, GPL-licensed operating system for manycore architectures.
+Our goal is to provide support for parallel and high-performance applications and to scale to a large number of cores.
+      </p>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+</td>
+</tr>
+<tr>
+<td align=center>
+This research is supported in part by the <a href=http://www.nsf.gov/>National Science Foundation</a>, 
+under grants <a href=http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1320005><b>#1320005</b></a> and <a href=http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1016714><b>#1016714</b></a>, and by the <a href=http://www.energy.gov/>Department of Energy</a> under grant #7086471.
+</td>
+</tr>
+<tr>
+<td>
+  <table border="0" bgcolor="#ffffff" width="100%" cellpadding="6">
+  <tbody>
+  <tr>
+    <td valign="TOP" align="CENTER" width="25%">
+      <table border="0" width="100%" height=400>
+      <tbody>
+      <tr border=10 bgcolor="006633"><td border=10 align="center">
+        <a class="navbar" href="news.html">News</a></td></tr>
+      <tr border=10 bgcolor="006633"><td border=10 align="center">
+        <a class="navbar" href="overview.html">Overview</a></td></tr>
+      <tr border=10 bgcolor="006633"><td border=10 align="center">
+        <a class="navbar" href="papers_and_talks.html">Papers and Talks</a></td></tr>
+      <tr border=10 bgcolor="006633"><td border=10 align="center">
+        <a class="navbar" href="getting_started.html">Getting Started</a></td></tr>
+      <tr border=10 bgcolor="006633"><td border=10 align="center">
+        <a class="navbar" href="license_info.html">License Info</a></td></tr>
+      <tr border=10 bgcolor="006633"><td border=10 align="center">
+        <a class="navbar" href="resources.html">Resources</a></td></tr>
+      <tr border=10 bgcolor="006633"><td border=10 align="center">
+        <a class="navbar" href="community.html">Community</a></td></tr>
+      <tr border=10 bgcolor="006633"><td border=10 align="center">
+        <a class="navbar" href="https://github.com/brho/akaros/issues">Report Bugs</a></td></tr>
+      </tbody>
+      </table>
+    </td>
+    <td valign="TOP" align="LEFT">
+
+  <center><h3>Latest News</h3></center>
+  <hr>
+
+  <p>
+<b>2019-10-06:</b> 
+Have you ever wanted to run fdisk or other Linux apps on Akaros, but couldn't?  Well, now you can!  Our virtual machines have progressed enough that you can run fdisk in a Linux VM on a drive.  The VM is fast enough that you don't even notice.  Huzzah!  You can also mount ext4 partitions using the Linux kernel itself - it's the best way to access an ext4 filesystem!
+  </p>
+
+  <p>
+<b>2018-09-06:</b> 
+We updated our Go port to 1.4 and can pass all of the tests.
+Yes, that's far from the latest version of Go, but this includes a lot of groundwork for jumping to Go 1.10 and beyond.
+Check it out at <a href="https://github.com/akaros/go-akaros">git@github.com:akaros/go-akaros.git</a> and follow the instructions in README.akaros.
+  </p>
+
+  <p>
+<b>2018-05-13:</b> 
+We overhauled our filesystem / namespace code.
+The old VFS is gone and replaced with infrastructure for the Plan 9 in-kernel devices.
+Devices that contain directories and files have the ability to mmap() files, use a page cache, and use symlinks - basically the operations that you'd expect on Linux.
+Mounts can use the new caching layer to mmap(), and thus exec(), binaries across a 9p channel.
+<br/>
+<br/>
+In support of this new code, we added RCU and a host of bug fixes.
+For more info, check out <a href="https://groups.google.com/forum/#!topic/akaros/HHGpEfGq6Vg">the post</a>.
+  </p>
+
+  <p>
+<b>2017-01-13:</b> 
+Our virtual machines now have networking support, similar to qemu's usermode networking.  You can port-forward host ports to the guest, communicate between the host and guest, and even have the guest think it has the host's IP address.  Check out kern/kfs/vnet_opts_example for the options.
+  </p>
+
+  <p>
+<b>2016-11-30:</b> 
+We added a section with a few of our <a href="papers_and_talks.html">papers and talks</a>.
+  </p>
+
+  <p>
+<b>2016-06-28:</b> 
+Akaros now has limited support for perf_events.  We support a basic <i>perf stat</i>, and you can run <i>perf record</i> on Akaros and analyze the perf.data file on Linux with <i>perf report</i>.  Check out Documentation/profiling.txt for more info.
+  </p>
+
+  <p>
+<b>2016-04-08:</b> 
+We now have SSH!  Get it at <a href="https://github.com/akaros/dropbear-akaros">git@github.com:akaros/dropbear-akaros.git</a> and follow the instructions in README.akaros.
+  </p>
+
+  <p>
+<b>2016-03-28:</b> 
+In the last year, we built a prototype virtual machine monitor (virtio-cons with a Linux guest), ported Linux's Mellanox NIC driver, added userspace epoll/select, updated our performance monitoring infrastructure, and fixed a lot of bugs.  Things are moving along nicely!
+  </p>
+
+  <p>
+<b>2015-03-05:</b> 
+Despite the lack of updates to the website, we've been quite busy.  We fixed many bugs and added lots of functionality.  We also ported the Broadcom bnx2x NIC driver from Linux to Akaros.
+  </p>
+
+  <p>
+<b>2014-10-28:</b> 
+Akaros now passes the Go test suite, as of Go 1.3!
+  </p>
+
+  <p>
+<b>2014-02-08:</b> 
+The University of California, Berkeley, has been authorized by Alcatel-Lucent to release Plan 9 under the GNU General Public License, Version 2.  The software is available for download <a href="../files/plan9.tar.bz2">here</a> with this <a href="../files/Plan9License.html">license</a>.  It is also available at this <a href="https://github.com/brho/plan9">git repo</a>.
+<br/>
+<br/>
+We owe special thanks to Jim McKie and Ron Minnich; this would not be possible without their efforts.
+  </p>
+  <p>
+
+<b>2014-01-27:</b> 
+<b>Q:</b> What do you get when you cross a giraffe and a bunny?  <b>A:</b> Akaros with Plan9's namespaces and networking stack!
+<br/>
+<br/>
+We merged code from Inferno, a Plan9 offshoot, and still maintain our glibc libraries in userspace.  While there are still many bugs and an uneasy mix of legacy VFS code alongside the Inferno code, more features work than are broken.
+  </p>
+  <p>
+<b>2014-01-23:</b> 
+Happy 5th Birthday, Akaros!  Our repo started 5 years ago today; we've definitely come a long way!  Despite the lack of news, we've been quite busy and hope to announce a couple big projects in the coming month.
+  </p>
+  <p>
+<b>2013-07-11:</b> 
+The 64 bit port is here!  The x86_64 port (a.k.a. amd64) is quite functional at this point, with only a few minor bugs/features remaining.  It'll be our default x86 version from here forward, with the 32 bit mode kept around mostly for debugging.
+  </p>
+  <p>
+<b>2013-04-26:</b> 
+If you haven't pulled in a while, you're missing out on many improvements: better POSIX signal handling, instructions on getting started, better measurement infrastructure, support for C++ streams, and of course a lot of bug fixes. 
+<br/>
+<br/>
+If you're interested in provisioning cores, check out the helper program "prov".  While the kernel interface for provisioning isn't finalized, we'll keep this program in sync with whatever interface we use.
+<br/>
+<br/>
+Lastly, we can run some Parsec benchmarks.  For instance, fluidanimate runs slightly better on Akaros with 31 cores than on Linux with 32, and we can handle preempting cores from the app at machine speeds!
+  </p>
+  <p>
+<b>2013-01-02:</b> 
+We've been busy recently.  Pull to find lots of bug fixes, early signalling support, and initial OpenMP support.
+  </p>
+  <p>
+<b>2012-09-25:</b> 
+Most of the developers were interning over the summer.  Akaros development was quiet, but now we're back.  We have a kernel scheduler that knows how to provision cores and preempt cores from backfilled processes.  Now that we can test the preemption handling code at machine-speeds, let the bug hunt(s) commence!
+  </p>
+  <p>
+<b>2012-03-21:</b> 
+Single-core processes can now receive events and (more importantly) block on syscalls, using similar mechanisms that the MCPs use.  While this won't help high-performance applications directly, it makes the system more usable, and it's been on the TODO list for quite a while.
+  </p>
+  <p>
+<b>2011-12-20:</b> 
+Userspace now has handlers that can deal with the kernel preempting/revoking vcores.  The handlers deal with all sorts of deadlocks and race conditions, while making sure you don't miss messages.  Second level schedulers won't need to worry about these details, so long as they use the uthread library.  It's rather badass.
+  </p>
+  <p>
+<b>2011-10-11:</b> 
+Userspace now has MCS locks with preemption detection/recovery (called MCS-PDR locks).  This will prevent MCS lock grabbers from spinning while the critical thread/vcore is preempted.  Check out the details in commit <a href="../gitweb/indexf415.html?p=akaros.git;a=commit;h=bf1a334bc24a6330319239f5ce1656f4bcc8bd62">bf1a334bc</a>.  It'll be a more complete solution once we have full preemption recovery for arbitrary places in the code.
+  </p>
+
+  <p>
+<b>2011-10-04:</b> 
+Multiple processes can now yield/block on outstanding events/syscalls, and the process management code can handle whatever interleavings of processes and kthreads that the scheduler desires.  Check out some recent commits or the Documentation for more details!
+  </p>
+
+  <p>
+<b>2011-08-31:</b> 
+We have a paper that will appear in <a href="http://socc2011.gsd.inesc-id.pt/">SOCC '11</a>.  Check out the personal version <a href="http://www.cs.berkeley.edu/~brho/papers/socc11-akaros.pdf">here</a>.
+  </p>
+
+  <p>
+<b>2011-07-28:</b> 
+Akaros now has a facility to safely send an arbitrary number of messages to userspace via shared memory structures, which greatly simplifies building systems on top of event delivery.  Check out the recent commit (<a href="../gitweb/index13dc.html?p=akaros.git;a=commit;h=63853fda6f9a8b88ef734cbfb8e10f5e979ba335">63853fda6</a>) that added UCQs for more details.
+  </p>
+
+  <p>
+<b>2011-06-07:</b> 
+User-level schedulers (2LSs) can now block and restart threads that submitted async syscalls that blocked, and the 2LSs can handle completion-message overflow.  This exposed lots of fun bugs!
+  </p>
+
+  <p>
+<b>2011-04-05:</b> 
+Updated the description and overview, and added a link to a FAQ.  Curious about something?  Go ahead and ask!
+  </p>
+
+  <p>
+<b>2011-04-01:</b> 
+Added a link explaining the licenses that govern both the Akaros kernel code as
+well as any user space libraries written by the Akaros team.  See the 
+<a href="license_info.html">License Info</a> link on the left for more information.
+  </p>
+
+  <p>
+<b>2011-04-01:</b> 
+Added some info about each of the Akaros developers.  Take a look at the
+<a href="developers.html">Developers</a> link on the left.
+  </p>
+
+  <p>
+<b>2011-04-01</b> 
+We finished the operating system!  Just kidding.  Did add a source code
+documentation link to the website though. Look for it under the 
+<a href="resources.html">Resources</a> link or click 
+<a href="../akaros-doxygen/rosdoc/html.html">here</a>.
+  </p>
+
+  <p>
+<b>2011-03-31:</b> 
+Added information about our mailing list, IRC channel, and other useful
+information to the Community section of the website.Take a look under the 
+<a href="community.html"> Community</a> link on the left for more information.
+  </p>
+
+  <p>
+<b>2011-03-31:</b> 
+Added <a href=../gitweb/index34da.html?p=akaros.git;a=summary>gitweb</a>, 
+<a href=../akaros-stats/index.html>gitstats</a>, and 
+<a href="../lxr/akaros.html">LXR Cross Referencing</a>
+links for the main source repository to the website. Take a look under the <a href="resources.html">
+Resources</a> link on the left for more information.
+  </p>
+
+  <p>
+<b>2011-03-31:</b> 
+Filled in a basic overview and information on how to get started working with
+Akaros, including how to download, install, and run it on your system.
+Take a look at the <a href="overview.html">Overview</a> and 
+<a href="getting_started.html">Getting Started</a> links on the left for more
+information.
+  </p>
+
+  <p>
+<b>2011-03-29:</b> 
+New Website!  You're looking at it!
+  </p>
+  <hr>
+
+      </td>
+  </tr>
+  </tbody>
+  </table>
+</td>
+</tr>
+<tr><td>
+<p>
+Problems with this page?<br>
+Email Kevin Klues 
+<a href="mailto:klueska@cs.berkeley.edu">&lt;klueska@cs.berkeley.edu&gt;<a>
+<br>
+Akaros is a registered trademark of Barret Rhoden
+</p>
+</td></tr>
+</table>
+</center>
+  </body>
+
+<!-- Mirrored from www.akaros.org/akaros-web/news.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Dec 2020 20:21:19 GMT -->
+</html>
+
